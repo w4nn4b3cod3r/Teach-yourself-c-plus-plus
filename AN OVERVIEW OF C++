@@ -193,3 +193,45 @@ int main()
 
     return 0;
 }
+
+/*
+*------------------------------------------------------------------------------------------------------------------------------
+* P:26_Examples: 4 -> Create a class called card that maintains a library card catalog entry. Have the Class store a book's title, author
+* and number of copies available. keep the variables private & there should be member function to call that with show() function
+* and store() function for entry the data into it.
+*------------------------------------------------------------------------------------------------------------------------------
+*/
+
+#include <iostream>
+#include <string>
+using namespace std;
+
+class card
+{
+    string bookTitle, authorName;
+    int copyOfBooks;
+public:
+    void store(string title, string name, int numOfBooks);
+    void show();
+};
+void card::store(string title, string name, int numOfBooks){
+    bookTitle = title;
+    authorName = name;
+    copyOfBooks = numOfBooks;
+}
+void card::show(){
+    cout << "Book Title: " << bookTitle << "\t" << "Author Name: " << authorName << "\t" << "Books Available: " << copyOfBooks << "\n";
+}
+int main()
+{
+    card book1, book2, book3;
+
+    book1.store("Test Book 1", "Ruhul", 10);
+    book2.store("Test Book 2", "Jibon", 21);
+    book3.store("Test Book 3", "Moyna", 100);
+    book1.show();
+    book2.show();
+    book3.show();
+
+    return 0;
+}
