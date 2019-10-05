@@ -1,0 +1,100 @@
+/*
+*------------------------------------------------------------------------------------------------------------------------------
+* P:16_Examples: 4  -> Below program prompts the user for an integer value, floating-point value, and a string. It then uses one
+* input statement to read all three values.
+*------------------------------------------------------------------------------------------------------------------------------
+*/
+#include <iostream>
+using namespace std;
+
+int main()
+{
+    int i;
+    float j;
+    char s[80];
+
+    cout << "Enter an integer, float & string: ";
+    cin >> i >> j >> s;
+    cout << "Heres your data Integer: " << i << " Float: " << j << " String: " << s;
+
+    return 0;
+}
+
+/*
+*------------------------------------------------------------------------------------------------------------------------------
+* P:18_Exercises: 1  -> Write a program that inputs the number of hours than an employee work and the employee's wage. Then
+* display the employee's pay. (Be sure to prompt for input)
+*------------------------------------------------------------------------------------------------------------------------------
+*/
+
+#include <iostream>
+using namespace std;
+
+int main()
+{
+    double workHour;
+    int wage, total, grossPay;
+
+    cout << "Enter the Work Hour & wage: ";
+    cin >> workHour >> wage;
+
+    total = workHour * 52; // 52 Number of weeks in a year
+    cout << "Your Gross pay is: " << (double)wage/total << "\n";
+
+
+    return 0;
+}
+
+/*
+*------------------------------------------------------------------------------------------------------------------------------
+* P:18_Exercises: 2  -> Write a program that converts feet to inches. Prompt the user for feet and display the equivalent number
+* of inches. Have your program repeat this process until the user enters 0 for the number of feet.
+*------------------------------------------------------------------------------------------------------------------------------
+*/
+
+#include <iostream>
+using namespace std;
+
+int main()
+{
+    double feet;
+
+    while(feet){
+        cout << "Enter the feet: ";
+        cin >> feet;
+        cout << "The inch value of " << feet << " is " << feet*12 << " inches.\n";
+    }
+    return 0;
+}
+
+/*
+*------------------------------------------------------------------------------------------------------------------------------
+* P:18_Exercises: 2  -> Write below C program into C++ standard format.
+* 
+*------------------------------------------------------------------------------------------------------------------------------
+*/
+#include <iostream>
+using namespace std;
+
+int main()
+{
+    int a, b, d, min;
+
+    cout << "Enter two numbers: ";
+    cin >> a >> b;
+    
+    min = a > b ? b : a;
+    
+    for(d = 2; d < min; d++){
+     if(((a%d)==0) && ((b%d) == 0)) break;
+        if(d==min){
+            cout << "No Common denominators.\n";
+            return 0;
+        }
+    }
+    
+    cout << "The lowest common denominator is " << d;
+    
+    return 0;
+}
+
