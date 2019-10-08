@@ -225,3 +225,57 @@ int main()
     
     return 0;
 }
+
+/*
+* Constructor & Destructor with parameters 
+*/
+
+#include <iostream>
+#include <cstdlib>
+#include <cstring>
+
+using namespace std;
+
+class strtype
+{
+    char *p; int len;
+public:
+    strtype(char *ptr); // Constructor with parameter
+    ~strtype();
+    void show();
+};
+
+strtype::strtype(char *ptr) /// initializing constructors with variable initiation & parameter
+{
+    len = strlen(ptr);
+    p = (char*) malloc(len + 1);
+    if(!p) {
+        cout << "Memory allocation error !" << endl;
+        exit(1);
+    }
+    else {
+        strcpy(p, ptr);
+    }
+}
+strtype::~strtype()
+{
+    cout <<"deallocating memory ...." << endl;
+    free(p);
+}
+void strtype::show()
+{
+    cout << p << " - length of the string: " << len << endl;
+}
+int main()
+{
+    strtype s1("I Love to do programming"), s2("Do you understand me ?");
+
+    s1.show();
+    s2.show();
+
+    return 0;
+}
+
+
+
+
