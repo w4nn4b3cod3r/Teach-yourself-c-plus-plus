@@ -1,7 +1,6 @@
 /*
 *------------------------------------------------------------------------------------------------------------------------------
-* P:46_Constructor & destructor  -> Write a program that inputs the number of hours than an employee work and the employee's wage. Then
-* display the employee's pay. (Be sure to prompt for input)
+* Just a simple constructor & destructor
 *------------------------------------------------------------------------------------------------------------------------------
 */
 #include <iostream>
