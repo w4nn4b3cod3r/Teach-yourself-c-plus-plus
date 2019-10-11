@@ -1,6 +1,7 @@
-
 #include <iostream>
+
 using namespace std;
+
 class Ball{
     float x;
     string name;
@@ -18,11 +19,11 @@ Ball::Ball() {
 }
 Ball::Ball(float radius) {
     x = radius;
-    name = "Blue";
+    name = "black";
 }
 Ball::Ball(string string1){
     name = string1;
-    x = 10;
+    x = 10.0;
 }
 Ball::Ball(string string1, float radius){
     name = string1;
