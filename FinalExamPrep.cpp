@@ -19,8 +19,7 @@ public:
 		return temp;
 	}
 	bool operator == (C SOME_OB) {
-		C temp;
-		if (temp.value == SOME_OB.value) {
+		if (value == SOME_OB.value) {
 			return true;
 		}
 		else {
@@ -56,9 +55,9 @@ void C::print()
 	std::cout << "Class Object Value: " << value << std::endl;
 }
 int main() {
-	C c1(100), c2(20), c3(50), c5(10);
+	C c1(10), c2(20), c3(50), c5(10);
 	C c4;
-	c4 = c1 + (c2 - c3);
+	c4 = c1 + c2 - c3;
 	c4.print();
 	//std::cout << c1 + c2 - c3;
 	if (c1 > c5) {
