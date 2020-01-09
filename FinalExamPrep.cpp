@@ -112,3 +112,71 @@ int main()
 	return 0;
 
 }
+
+
+// 2.Write a class C
+// That have Member variable
+// 1.value(double)
+// That have Member Function
+// 1.constructor for initialization
+// 2.overloaded = function taking parameter(a double value)
+// 3. get value function to print the values
+// Now in main function
+// 1.Take vector<C> v;
+// 2. Insert 10 objects of class C, each object must hold different value in its “value ” variable
+// 3.Print all the values of objects from vector.
+// 4. modify all the values of the objects in vector
+// 5.print again all the values
+#include <iostream>
+#include <vector>
+
+class C {
+private:
+	double value;
+public:
+	C();
+	~C();
+	C(double d) { value = d; }
+	C& operator = (double x) {
+		value = x;
+		return *this;
+	}
+	double getValue() { return value; }
+};
+C::C()
+{
+	value = 0;
+}
+
+C::~C()
+{
+	//do nothing 
+}
+
+int main()
+{
+	std::vector<C> v;
+	int i;
+
+	//push new items to the class value with vector
+	for (i = 0; i < 10; i++)
+		v.push_back(i/3.0);
+
+	// display the current Vector Elements in dynamic array/Vector
+	for (i = 0; i < v.size(); i++)
+		std::cout << v[i].getValue() << " ";
+	std::cout << "\n";
+
+	// now if i try to multiply those vector value by 2.1 then
+	std::cout << "After the multiplication of elements of the value by 2.1" << "\n";
+	for (i = 0; i < v.size(); i++)
+		v[i] = v[i].getValue() * 2.1;
+
+	// now display the elements
+	for (i = 0; i < v.size(); i++)
+		std::cout << v[i].getValue() << " ";
+	std::cout << "\n";
+
+	return 0;
+}
+
