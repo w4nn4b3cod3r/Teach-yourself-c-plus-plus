@@ -326,4 +326,6 @@ int main()
 	else
 		cout << "\nNo key found in the map\n";
 
+	return 0;
+
 }
