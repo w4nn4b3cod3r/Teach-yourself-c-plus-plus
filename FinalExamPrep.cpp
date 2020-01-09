@@ -293,3 +293,37 @@ int main()
 	}
 	return 0;
 }
+
+// The following program illustrates teh basics of using a map.
+// It stores ten key/value pairs. The key is a character and the value is an iteger.
+// The key/value pairs stroed are
+// A     0
+// B     1
+// C     2
+// D     4
+#include <iostream>
+#include <map>
+using namespace std;
+
+int main()
+{
+	// Initiating MAP STL using the format of map<KEY, VALUE> object;
+	// <KEY(to find with, VALUE(show against the key)
+	map<char, int> m;
+	int i;
+
+	// put pairs into map
+	for (i = 0; i < 10; i++) {
+		m.insert(pair<char, int>('A' + i, i));
+	}
+	char ch = NULL;
+	cout << "\nEnter key: ";
+	cin >> ch;
+	map<char, int>::iterator p;
+	p = m.find(ch);
+	if (p != m.end())
+		cout << "\nFound Key: " << p->first << "\t" << p->second;
+	else
+		cout << "\nNo key found in the map\n";
+
+}
