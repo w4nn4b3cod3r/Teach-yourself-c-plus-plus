@@ -180,3 +180,42 @@ int main()
 	return 0;
 }
 
+
+// Some
+// Add 
+// Erase Function application using Vector
+#include <iostream>
+#include <vector>
+
+using namespace std;
+
+int main()
+{
+	vector<int> v(5, 1);
+	int i;
+	for (i = 0; i < v.size(); i++)
+		cout << v[i] << " ";
+	cout << endl;
+
+	cout << "Size of v object is: " << v.size() << endl;
+
+	vector<int>::iterator p = v.end();
+
+
+	v.insert(p, 10, 9);
+
+	for (i = 0; i < v.size(); i++)
+		cout << v[i] << " ";
+
+	cout << "\nSize of the v now: "<< v.size() << endl;
+	p = v.begin();
+	p = p + 5;
+	v.erase(p, p+10);
+	cout << "\nAfter erase the elements are now: ";
+	for (i = 0; i < v.size(); i++)
+		cout << v[i] << " ";
+
+	cout << "\nSize is: " << v.size() << endl;
+
+	return 0;
+}
