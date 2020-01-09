@@ -260,3 +260,36 @@ int main()
 
 	return 0;
 }
+
+// List STL usage in C++
+// Create a List with A->J elements in sorted order
+// then create another list to create reverse list with poping first list
+#include <iostream>
+#include <list>
+
+using namespace std;
+
+int main()
+{
+	list<char> n_list;
+	list<char> r_list;
+	int i;
+	// creating the n_list with sorted order
+	for (i = 0; i < 10; i++) n_list.push_back('A' + i);
+	list<char>::iterator p = n_list.begin();
+	while (!n_list.empty()) {
+		p = n_list.begin();
+		cout << *p << " ";
+		r_list.push_front(*p);
+		n_list.pop_front();
+	}
+	cout << endl;
+
+	// now printing the new list with that has been taken as reverse order;
+	p = r_list.begin();
+	while (p != r_list.end()) {
+		cout << *p << " ";
+		p++;
+	}
+	return 0;
+}
