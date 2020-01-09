@@ -191,23 +191,27 @@ using namespace std;
 
 int main()
 {
+	// Inser 5 Elements with value 1
 	vector<int> v(5, 1);
 	int i;
+	// print all the elements is the dynamic array
 	for (i = 0; i < v.size(); i++)
 		cout << v[i] << " ";
 	cout << endl;
-
+	// print the current size of the vector
 	cout << "Size of v object is: " << v.size() << endl;
+	
+	// we can loop through the vector also using *iterator function as below
+	vector<int>::iterator p = v.end(); // iterator object is p and it's value set as last
 
-	vector<int>::iterator p = v.end();
-
-
+	// insert 10 elements with value of 9 at the end of the dynamic array 
 	v.insert(p, 10, 9);
-
+	// print the dynamic array
 	for (i = 0; i < v.size(); i++)
 		cout << v[i] << " ";
 
-	cout << "\nSize of the v now: "<< v.size() << endl;
+	cout << "\nSize of the v now: "<< v.size() << endl; // get the current size of the array
+	// changing the p location 
 	p = v.begin();
 	p = p + 5;
 	v.erase(p, p+10);
