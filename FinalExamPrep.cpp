@@ -223,3 +223,40 @@ int main()
 
 	return 0;
 }
+
+// List STL usage in C++
+// Demo of List library use
+// how to add, delete, view list with c++
+#include <iostream>
+#include <list>
+using namespace std;
+int main()
+{
+	// instancesitating the list and creating a list object
+	list<int> myList; // creating an empty list
+
+	for (int i = 0; i < 10; i++) myList.push_back(1 + i); // pushing 10 int value to the list
+
+	cout << "Size of the list: " << myList.size() << endl; // getting size of the list
+
+	list<int>::iterator p = myList.begin(); // setting up iterator with p object
+	
+	// Displaying the list with for loop
+	for (int i = 0; i < myList.size();) {
+		cout << *p << " ";
+		p++;
+		myList.pop_front();
+	}
+
+	for (int i = 0; i < 10; i++) myList.push_back(1 + i);
+
+	// Displaying the loop using while loop
+	cout << endl;
+	while (!myList.empty()) {
+		p = myList.begin();
+		cout << *p << " ";
+		myList.pop_front();
+	}
+
+	return 0;
+}
